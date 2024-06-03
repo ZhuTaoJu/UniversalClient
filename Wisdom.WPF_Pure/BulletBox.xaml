@@ -1,0 +1,24 @@
+﻿<Window x:Class="Wisdom.WPF_Pure.BulletBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wisdom.WPF_Pure"
+        mc:Ignorable="d"
+        Title="BulletBox" Height="450" Width="800"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        >
+    <Grid>
+        <tb:TaskbarIcon x:Name="MyNotifyIcon" IconSource="/Resources/Icons/logo.png" ToolTipText="系统托盘图标测试" PopupActivation="RightClick">
+            <tb:TaskbarIcon.TrayPopup>
+                <Border Background="White" BorderBrush="Orange" BorderThickness="2" CornerRadius="4" Width="160" Height="180">
+                    <StackPanel>
+                        <Button Content="开启" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10" Width="100"/>
+                        <Button Content="关闭" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10" Width="100"/>
+                        <Button Content="气球" Click="Button_Balloon_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10" Width="100"/>
+                    </StackPanel>
+                </Border>
+            </tb:TaskbarIcon.TrayPopup>
+        </tb:TaskbarIcon>
+    </Grid>
+</Window>

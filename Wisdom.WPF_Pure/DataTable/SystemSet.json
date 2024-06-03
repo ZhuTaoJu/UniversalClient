@@ -1,0 +1,35 @@
+{
+  "permission": {
+    "canInsert": "y",
+    "canUpdate": "y"
+  },
+  "field": [
+    {
+      "name": "IsAutoStart",
+      "property": {
+        "type": "bool"
+      }
+    },
+    {
+      "name": "id",
+      "property": {
+        "type": "string",
+        "isPK": "y"
+      }
+    }
+  ],
+  "index": [],
+  "objs": [
+    {
+      "primaryKey": {
+        "cName": [ "id", "dd" ]
+      }
+    }
+  ],
+  "Data": [
+    {
+      "IsAutoStart": true,
+      "id": "AutoStart"
+    }
+  ]
+}
