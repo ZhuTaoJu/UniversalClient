@@ -1,0 +1,42 @@
+﻿<Window x:Class="Wisdom.WPF_Pure.ContextMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wisdom.WPF_Pure"
+        mc:Ignorable="d"
+        Title="ContextMenuWindow" Height="450" Width="800"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:resource="clr-namespace:Wisdom.WPF_Pure.Commands" 
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        StateChanged="Self_StateChanged" Closing="Window_Closing"
+        Icon="/Resources/Icons/bitbug_favicon.ico"
+        >
+    <Window.Resources>
+        <resource:ShowMessageCommand x:Key="ShowMessageCommand"/>
+    </Window.Resources>
+    <Grid>
+        <wv2:WebView2 Name="webView" Source="http://www.wisdomofwisdom.com"/>
+        <tb:TaskbarIcon x:Name="MyNotifyIcon" IconSource="/Resources/Icons/bitbug_favicon.ico" 
+                        ToolTipText="系统托盘图标测试"
+                        LeftClickCommand="{StaticResource ShowMessageCommand}" 
+                        LeftClickCommandParameter="左单机"
+                        DoubleClickCommand="{StaticResource ShowMessageCommand}"
+                        DoubleClickCommandParameter="双击"
+                        >
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu Background="LightCoral">
+                    <MenuItem Header="内嵌窗口" Click="EmbedOtherWindows_Click"/>
+                    <MenuItem Header="设置" Click="SystemSet_Click"/>
+                    <MenuItem Header="显示窗口" Click="ShowWindow_Click"/>
+                    <MenuItem Header="隐藏窗口" Click="HiddenWindow_Click"/>
+                    <!--<MenuItem Header="气球提示" Click="MenuItem_Balloon_Click"/>
+                    <MenuItem Header="气球自定义" Click="Balloon_UserControl_Click"/>-->
+                    <MenuItem Header="退出" Click="exit_Click"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+    </Grid>
+</Window>
+    
+    
